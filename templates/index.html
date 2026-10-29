@@ -1,0 +1,496 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08080d">
+    <meta name="description" content="Join GhostCODM, find your squad, improve your skills and dominate Call of Duty: Mobile.">
+    <title>GhostCODM | Enter the Battlefield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <div class="background-glow" aria-hidden="true"></div>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="{{ url_for('home') }}" class="logo" aria-label="GhostCODM home">
+            <span class="logo-mark">G</span>
+            <span>GHOST<span class="purple">CODM</span></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="{{ url_for('home') }}" class="active" aria-current="page">
+                <span class="nav-number">01</span> HOME
+            </a>
+            <a href="{{ url_for('guides') }}">
+                <span class="nav-number">02</span> GUIDES
+            </a>
+            <a href="{{ url_for('weapons') }}">
+                <span class="nav-number">03</span> WEAPONS
+            </a>
+        </nav>
+
+        <a href="{{ url_for('jsg') }}" class="nav-cta">
+            <span class="nav-cta-dot" aria-hidden="true"></span>
+            JOIN THE SQUAD <span class="nav-arrow">↗</span>
+        </a>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    GHOSTCODM COMMUNITY
+                </div>
+
+                <h1>NO ONE<br><span>FIGHTS</span> ALONE.</h1>
+
+                <p class="hero-description">
+                    Find your squad. Sharpen your skills.
+                    Dominate the battlefield.
+                    Your next victory starts here.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="{{ url_for('jsg') }}" class="primary-button">
+                        JOIN THE SQUAD <span>↗</span>
+                    </a>
+                    <a href="{{ url_for('guides') }}" class="secondary-button">
+                        EXPLORE GUIDES <span>→</span>
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="note-line"></span>
+                    BUILT FOR PLAYERS. UNITED BY VICTORY.
+                </div>
+            </div>
+
+            <div class="hero-visual" role="img" aria-label="GhostCODM emblem">
+                <div class="visual-ring ring-one"></div>
+                <div class="visual-ring ring-two"></div>
+                <div class="ghost-emblem">
+                    <span class="emblem-top">G</span>
+                    <span class="emblem-bottom">CODM</span>
+                </div>
+                <div class="floating-label label-top">
+                    <span class="status-dot"></span>
+                    SQUAD UP
+                </div>
+                <div class="floating-label label-bottom">
+                    <span>01</span> MISSION: VICTORY
+                </div>
+            </div>
+
+            <div class="hero-index">
+                <span>01</span> / ENTER THE BATTLEFIELD
+            </div>
+        </section>
+
+        <!-- STRONGER TOGETHER -->
+        <section class="stronger-together" id="community">
+            <div class="st-heading">
+                <div class="st-heading-copy">
+                    <p class="st-eyebrow">ONE COMMUNITY. ONE MISSION.</p>
+                    <h2>STRONGER <span>TOGETHER.</span></h2>
+                    <p class="st-intro">
+                        Great players are built through teamwork, discipline
+                        and the determination to improve. Discover what makes
+                        the GhostCODM community stronger.
+                    </p>
+                </div>
+                <div class="st-heading-mark" aria-hidden="true">
+                    <span>G</span>
+                    <small>GHOSTCODM / COMMUNITY DIVISION</small>
+                </div>
+            </div>
+
+            <div class="st-grid">
+
+                <!-- UNITED COMMUNITY -->
+                <article class="st-card">
+                    <div class="st-card-top">
+                        <span class="st-number">01</span>
+                        <span class="st-index">COMMUNITY / 001</span>
+                    </div>
+
+                    <div class="st-icon" aria-hidden="true">◎</div>
+                    <p class="st-category">ONE TEAM. ONE PURPOSE.</p>
+                    <h3>UNITED <span>COMMUNITY</span></h3>
+
+                    <p class="st-description">
+                        GhostCODM is more than a place to play Call of Duty:
+                        Mobile. It is a community built around respect,
+                        friendship, teamwork and the ambition to become better
+                        players. Every member brings a different personality,
+                        experience and play style, but we share one mission:
+                        to grow together and make every match count.
+                    </p>
+
+                    <div class="st-divider"></div>
+                    <h4>WHAT BRINGS US TOGETHER</h4>
+
+                    <ul class="st-list">
+                        <li>
+                            <span>01</span>
+                            <div>
+                                <strong>Respect &amp; Loyalty</strong>
+                                <p>Support teammates, respect opponents and maintain a positive attitude, even when a match becomes difficult.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <div>
+                                <strong>Communication</strong>
+                                <p>Share useful information, coordinate your movements and keep your squad informed when decisions matter.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <div>
+                                <strong>Collective Progress</strong>
+                                <p>Exchange strategies, learn from mistakes and help every willing player develop their abilities.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="st-quote">
+                        <span>OUR PRINCIPLE</span>
+                        <p>“No one grows alone. We rise together.”</p>
+                    </div>
+
+                    <div class="st-card-footer">
+                        <span>GHOSTCODM COMMUNITY</span>
+                        <span>01 / 03</span>
+                    </div>
+                </article>
+
+                <!-- SQUAD ROLES -->
+                <article class="st-card">
+                    <div class="st-card-top">
+                        <span class="st-number">04</span>
+                        <span class="st-index">TACTICAL UNIT / 004</span>
+                    </div>
+
+                    <div class="st-icon" aria-hidden="true">⌖</div>
+                    <p class="st-category">EVERY PLAYER HAS A PURPOSE.</p>
+                    <h3>SQUAD <span>ROLES</span></h3>
+
+                    <p class="st-description">
+                        A strong squad needs more than individual talent.
+                        It needs players who understand their responsibilities,
+                        communicate effectively and know how to work toward
+                        a shared objective. Find your strengths, learn your
+                        role and adapt to the needs of your team.
+                    </p>
+
+                    <div class="st-divider"></div>
+                    <h4>CHOOSE YOUR SPECIALIZATION</h4>
+
+                    <ul class="st-list">
+                        <li>
+                            <span>01</span>
+                            <div>
+                                <strong>Assault / Entry Fragger</strong>
+                                <p>Lead coordinated pushes, pressure enemy positions and create opportunities for your teammates.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <div>
+                                <strong>Support / Defender</strong>
+                                <p>Cover your squad, share information and help teammates survive difficult engagements.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <div>
+                                <strong>Sniper / Long-Range Control</strong>
+                                <p>Watch important angles, pressure distant threats and cover your team's movement with precision.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>04</span>
+                            <div>
+                                <strong>Scout / Tactical Observer</strong>
+                                <p>Monitor enemy movements, identify threats and help the squad choose smarter routes.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="st-quote">
+                        <span>THE SQUAD FORMULA</span>
+                        <p>“Communicate. Coordinate. Execute.”</p>
+                    </div>
+
+                    <div class="st-card-footer">
+                        <span>TACTICAL OPERATIONS</span>
+                        <span>02 / 03</span>
+                    </div>
+                </article>
+
+                <!-- READY TO IMPROVE -->
+                <article class="st-card">
+                    <div class="st-card-top">
+                        <span class="st-number st-number-wide">24/7</span>
+                        <span class="st-index">TRAINING / 007</span>
+                    </div>
+
+                    <div class="st-icon" aria-hidden="true">↗</div>
+                    <p class="st-category">PROGRESS NEVER STOPS.</p>
+                    <h3>READY TO <span>IMPROVE</span></h3>
+
+                    <p class="st-description">
+                        Becoming a better player takes patience, consistency
+                        and the willingness to learn. Every match offers a
+                        chance to discover a weakness, develop a skill or
+                        make a smarter decision. At GhostCODM, improvement
+                        is a continuous journey. We focus on progress rather
+                        than perfection and turn experience into better
+                        performance.
+                    </p>
+
+                    <div class="st-divider"></div>
+                    <h4>YOUR DEVELOPMENT ROADMAP</h4>
+
+                    <ul class="st-list">
+                        <li>
+                            <span>01</span>
+                            <div>
+                                <strong>Aim &amp; Precision</strong>
+                                <p>Practise recoil control, tracking, crosshair placement and accuracy to become more consistent in fights.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <div>
+                                <strong>Movement &amp; Reactions</strong>
+                                <p>Improve positioning, use cover effectively and practise movement that helps you respond under pressure.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <div>
+                                <strong>Map Knowledge</strong>
+                                <p>Study routes, important angles, rotations and objective locations to anticipate danger before it arrives.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>04</span>
+                            <div>
+                                <strong>Game Sense &amp; Teamwork</strong>
+                                <p>Learn when to attack, reposition, retreat or support a teammate through clear decisions and communication.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="st-training-cycle">
+                        <span>THE TRAINING CYCLE</span>
+                        <div class="st-cycle-items">
+                            <span>WARM UP</span><b>→</b>
+                            <span>PRACTISE</span><b>→</b>
+                            <span>COMPETE</span><b>→</b>
+                            <span>REVIEW</span>
+                        </div>
+                    </div>
+
+                    <div class="st-quote">
+                        <span>REMEMBER</span>
+                        <p>“Progress over perfection. Discipline over excuses.”</p>
+                    </div>
+
+                    <div class="st-card-footer">
+                        <span>PLAYER DEVELOPMENT</span>
+                        <span>03 / 03</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="st-bottom">
+                <span class="st-bottom-line"></span>
+                <p>PLAY TOGETHER. LEARN TOGETHER. WIN TOGETHER.</p>
+                <span class="st-bottom-line"></span>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">WHAT WE BRING</p>
+                    <h2>BUILT TO <span>DOMINATE.</span></h2>
+                </div>
+                <p class="section-description">
+                    Everything you need to become a stronger player
+                    and find teammates who have your back.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <a href="{{ url_for('jsg') }}" class="feature-card">
+                    <span class="card-number">01 / SQUAD</span>
+                    <div class="card-icon">⌁</div>
+                    <h3>FIND YOUR SQUAD</h3>
+                    <p>Meet teammates, choose your role and prepare for battle.</p>
+                    <span class="card-link">JOIN THE TEAM ↗</span>
+                </a>
+
+                <a href="{{ url_for('guides') }}" class="feature-card">
+                    <span class="card-number">02 / TRAINING</span>
+                    <div class="card-icon">⌖</div>
+                    <h3>LEVEL UP</h3>
+                    <p>Learn strategies, improve your aim and play smarter.</p>
+                    <span class="card-link">VIEW GUIDES ↗</span>
+                </a>
+
+                <a href="{{ url_for('weapons') }}" class="feature-card">
+                    <span class="card-number">03 / ARSENAL</span>
+                    <div class="card-icon">⟡</div>
+                    <h3>BUILD YOUR ARSENAL</h3>
+                    <p>Explore weapons and discover loadout possibilities.</p>
+                    <span class="card-link">EXPLORE WEAPONS ↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SQUAD ROLES -->
+        <section class="squad-roles">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EVERY PLAYER HAS A PURPOSE</p>
+                    <h2>CHOOSE YOUR <span>ROLE.</span></h2>
+                </div>
+                <p class="section-description">
+                    Build a balanced team by playing to your strengths
+                    and supporting your teammates.
+                </p>
+            </div>
+
+            <div class="roles-grid">
+                <article class="role-card">
+                    <span class="role-number">ROLE 01</span>
+                    <div class="role-symbol">⌖</div>
+                    <h3>SNIPER</h3>
+                    <p>Hold long angles, gather information and cover your team's movement.</p>
+                    <span class="role-trait">PRECISION · PATIENCE</span>
+                </article>
+
+                <article class="role-card">
+                    <span class="role-number">ROLE 02</span>
+                    <div class="role-symbol">⛨</div>
+                    <h3>SUPPORT</h3>
+                    <p>Protect teammates, share information and help the squad stay in the fight.</p>
+                    <span class="role-trait">TEAMWORK · AWARENESS</span>
+                </article>
+
+                <article class="role-card">
+                    <span class="role-number">ROLE 03</span>
+                    <div class="role-symbol">➤</div>
+                    <h3>ASSAULT</h3>
+                    <p>Take space, pressure objectives and lead coordinated pushes.</p>
+                    <span class="role-trait">PACE · CONFIDENCE</span>
+                </article>
+
+                <article class="role-card">
+                    <span class="role-number">ROLE 04</span>
+                    <div class="role-symbol">◈</div>
+                    <h3>SCOUT</h3>
+                    <p>Watch rotations, spot threats early and help your team plan its next move.</p>
+                    <span class="role-trait">INTEL · POSITIONING</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- BATTLEFIELD -->
+        <section class="battlefield">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CHOOSE YOUR BATTLEFIELD</p>
+                    <h2>HOW DO YOU <span>PLAY?</span></h2>
+                </div>
+                <p class="section-description">
+                    Choose your mode, find your role and prepare for the next mission.
+                </p>
+            </div>
+
+            <div class="battlefield-grid">
+                <a href="{{ url_for('guides') }}" class="battle-card multiplayer">
+                    <span class="battle-tag">MODE 01</span>
+                    <div class="battle-info">
+                        <p>FAST. TACTICAL. COMPETITIVE.</p>
+                        <h3>MULTIPLAYER</h3>
+                        <span>MASTER YOUR SKILLS ↗</span>
+                    </div>
+                </a>
+
+                <a href="{{ url_for('guides') }}" class="battle-card battle-royale">
+                    <span class="battle-tag">MODE 02</span>
+                    <div class="battle-info">
+                        <p>STRATEGY. SURVIVAL. VICTORY.</p>
+                        <h3>BATTLE ROYALE</h3>
+                        <span>PLAN YOUR DROP ↗</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- HOW TO JOIN -->
+        <section class="join-steps">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR MISSION STARTS HERE</p>
+                    <h2>THREE STEPS. <span>ONE SQUAD.</span></h2>
+                </div>
+            </div>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>JOIN THE COMMUNITY</h3>
+                    <p>Open the squad page and follow the community invite.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>INTRODUCE YOURSELF</h3>
+                    <p>Share your in-game name, preferred mode and play style.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>PLAY AS A TEAM</h3>
+                    <p>Communicate, support your squad and keep improving together.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FINAL CALL TO ACTION -->
+        <section class="community-banner">
+            <div>
+                <p class="eyebrow">YOUR NEXT TEAM STARTS HERE</p>
+                <h2>READY TO JOIN<br>THE <span>GHOSTS?</span></h2>
+                <p class="banner-description">
+                    Bring your skills. Respect your squad. Chase the win.
+                </p>
+            </div>
+
+            <a href="{{ url_for('jsg') }}" class="primary-button">
+                ENLIST NOW <span>↗</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="{{ url_for('home') }}" class="logo footer-logo" aria-label="GhostCODM home">
+            <span class="logo-mark">G</span>
+            <span>GHOST<span class="purple">CODM</span></span>
+        </a>
+
+        <p>PLAY TOGETHER. FIGHT TOGETHER.</p>
+        <span class="copyright">© 2026 GHOSTCODM</span>
+    </footer>
+</body>
+</html>
