@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | GhostCODM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #080810;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 45px 30px;
+            background: #11111f;
+            border: 1px solid #a855f7;
+            border-radius: 18px;
+            box-shadow: 0 0 30px #a855f733;
+        }
+
+        h1 {
+            color: #a855f7;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #c5c5d5;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #a855f7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #7e22ce;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GhostCODM Community</h1>
+
+        <p>
+            Welcome to the GhostCODM community.
+            Connect with other players, share your experience
+            and build your squad.
+        </p>
+
+        <p>
+            Play together. Improve together. Win together.
+        </p>
+
+        <a href="{{ url_for('home') }}" class="button">
+            Back to Home
+        </a>
+    </div>
+</body>
+</html>
