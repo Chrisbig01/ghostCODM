@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Improve your Call of Duty Mobile skills with GhostCODM guides.">
+    <title>GhostCODM | Game Guides</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gd.css') }}">
+</head>
+<body>
+
+    <header class="guides-header">
+        <a href="{{ url_for('home') }}" class="logo">GHOST<span>CODM</span></a>
+
+        <nav>
+            <a href="{{ url_for('home') }}">HOME</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="guides-section" id="guides">
+
+            <p class="section-label">IMPROVE YOUR GAME</p>
+
+            <h1>GHOST<span> GUIDES</span></h1>
+
+            <p class="guides-intro">
+                Learn the skills, master the battlefield and help your squad win.
+            </p>
+
+            <div class="guides-grid">
+
+                <article class="guide-card" id="aim">
+                    <span class="guide-number">GUIDE 01</span>
+                    <h2>🎯 Aim & Accuracy</h2>
+
+                    <p>
+                        Improve your aim, control recoil and learn to track enemies.
+                    </p>
+
+                    <ul>
+                        <li>Practice your crosshair placement.</li>
+                        <li>Adjust sensitivity step by step.</li>
+                        <li>Learn recoil control.</li>
+                        <li>Practice tracking moving targets.</li>
+                    </ul>
+
+                    <a href="#aim" class="guide-link">AIM WITH PURPOSE ↗</a>
+                </article>
+
+                <article class="guide-card" id="battle-royale">
+                    <span class="guide-number">GUIDE 02</span>
+                    <h2>🪂 Battle Royale</h2>
+
+                    <p>
+                        Make smart decisions and survive until the final circle.
+                    </p>
+
+                    <ul>
+                        <li>Choose your landing zone wisely.</li>
+                        <li>Collect equipment early.</li>
+                        <li>Watch the safe zone.</li>
+                        <li>Avoid unnecessary fights when poorly equipped.</li>
+                    </ul>
+
+                    <a href="#battle-royale" class="guide-link">SURVIVE SMARTER ↗</a>
+                </article>
+
+                <article class="guide-card" id="team-strategy">
+                    <span class="guide-number">GUIDE 03</span>
+                    <h2>🤝 Team Strategy</h2>
+
+                    <p>
+                        Work together, cover your squad and win more fights.
+                    </p>
+
+                    <ul>
+                        <li>Share enemy locations.</li>
+                        <li>Cover teammates during fights.</li>
+                        <li>Communicate before pushing.</li>
+                        <li>Support your squad in critical moments.</li>
+                    </ul>
+
+                    <a href="#team-strategy" class="guide-link">PLAY AS A TEAM ↗</a>
+                </article>
+
+            </div>
+
+            <div class="guides-footer">
+                <p>TRAIN WITH PURPOSE. PLAY WITH CONFIDENCE.</p>
+                <a href="{{ url_for('home') }}" class="back-button">
+                    ← BACK TO HOME
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 GHOSTCODM. BUILT FOR THE SQUAD.</p>
+    </footer>
+
+</body>
+</html>
