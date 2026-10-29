@@ -25,6 +25,20 @@ def weapons():
 def jsg():
     return render_template("jsg.html")
 
+@app.route('/community')
+def community():
+    return render_template('community.html')
+
+
+@app.route('/squad-roles')
+def squad_roles():
+    return render_template('squad_roles.html')
+
+
+@app.route('/training')
+def training():
+    return render_template('training.html')
+
 
 @app.route("/join-squad", methods=["POST"])
 def join_squad():
