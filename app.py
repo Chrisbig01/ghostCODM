@@ -24,7 +24,6 @@ def weapons():
 @app.route("/jsg")
 def jsg():
     return render_template("jsg.html")
-
 @app.route('/community')
 def community():
     return render_template('community.html')
