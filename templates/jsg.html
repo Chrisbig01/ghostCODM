@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='jsg.css') }}">
+
+</head>
+<body>
+    
+<section class="community" id="community">
+    <div class="squad-content">
+        <p class="section-label">GHOSTCODM COMMUNITY</p>
+
+        <h2>JOIN THE <span>SQUAD.</span></h2>
+
+        <p class="squad-description">
+            Find your teammates, improve your skills,
+            and prepare for your next victory.
+        </p>
+
+        <form class="squad-form"
+              id="squad-form"
+              action="{{ url_for('join_squad') }}"
+              method="POST">
+            <div class="form-group">
+                <label for="player-name">CODM Username</label>
+                <input
+                    type="text"
+                    id="player-name"
+                    name="player_name"
+                    placeholder="Enter your CODM username"
+                    minlength="2"
+                    maxlength="30"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="player-level">Player Level</label>
+                <input
+                    type="number"
+                    id="player-level"
+                    name="player_level"
+                    placeholder="Your level (1–400)"
+                    min="1"
+                    max="400"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="game-mode">Preferred Game Mode</label>
+                <select id="game-mode" name="game_mode" required>
+                    <option value="">Choose a mode</option>
+                    <option value="multiplayer">Multiplayer</option>
+                    <option value="battle-royale">Battle Royale</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="player-role">Your Role</label>
+                <select id="player-role" name="player_role" required>
+                    <option value="">Choose your role</option>
+                    <option value="assault">Assault / Entry Fragger</option>
+                    <option value="sniper">Sniper</option>
+                    <option value="support">Support</option>
+                    <option value="leader">Squad Leader</option>
+                </select>
+            </div>
+
+            <button type="submit" class="primary-button">
+                REQUEST TO JOIN
+            </button>
+
+            <p id="squad-message" class="squad-message" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+    
+<script src="{{ url_for('static', filename='jsg.js') }}"></script>
+</body>
+</html>
