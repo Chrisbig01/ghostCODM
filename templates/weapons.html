@@ -1,0 +1,287 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08080d">
+    <meta name="description" content="Explore GhostCODM weapon loadouts, compare performance, and customize your Call of Duty Mobile builds.">
+
+    <title>Weapon Loadouts | GhostCODM</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='weapons.css') }}">
+
+    <script src="{{ url_for('static', filename='weapons.js') }}"
+            defer></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="{{ url_for('home') }}" aria-label="GhostCODM home">
+            GHOST<span>CODM</span>
+        </a>
+
+        <div class="header-actions">
+            <span class="status">
+                <i aria-hidden="true"></i>
+                LOADOUT SYSTEM
+            </span>
+
+            <a href="{{ url_for('home') }}" class="home-button">
+                <span aria-hidden="true">←</span> HOME
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="page-heading">
+            <p class="eyebrow">GHOST ARMORY / WEAPON DATABASE</p>
+            <h1>WEAPON <span>LOADOUTS</span></h1>
+            <p class="intro">
+                Build your weapon. Customize your strategy.
+                Dominate the battlefield.
+            </p>
+        </section>
+
+        <section class="mode-panel" aria-labelledby="mode-title">
+            <div>
+                <p class="eyebrow">SELECT YOUR BATTLEFIELD</p>
+                <h2 id="mode-title">Combat profile</h2>
+                <p class="muted">Choose a mode to adapt your weapon build.</p>
+            </div>
+
+            <div class="mode-switch" role="group" aria-label="Combat mode">
+                <button class="mode-btn selected"
+                        data-mode="multiplayer"
+                        type="button"
+                        aria-pressed="true">
+                    Multiplayer
+                </button>
+
+                <button class="mode-btn"
+                        data-mode="br"
+                        type="button"
+                        aria-pressed="false">
+                    Battle Royale
+                </button>
+            </div>
+        </section>
+
+        <section class="armory-layout" aria-label="Weapon customization">
+
+            <aside class="weapon-sidebar">
+                <div class="sidebar-heading">
+                    <h2>ARMORY</h2>
+                    <span id="weapon-count">04 WEAPONS</span>
+                </div>
+
+                <label class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="weapon-search"
+                           type="search"
+                           placeholder="Search weapons..."
+                           aria-label="Search weapons"
+                           autocomplete="off">
+                </label>
+
+                <div class="category-filters"
+                     role="group"
+                     aria-label="Filter weapons by category">
+
+                    <button class="filter-btn selected"
+                            data-category="all"
+                            type="button"
+                            aria-pressed="true">All</button>
+
+                    <button class="filter-btn"
+                            data-category="AR"
+                            type="button"
+                            aria-pressed="false">AR</button>
+
+                    <button class="filter-btn"
+                            data-category="SMG"
+                            type="button"
+                            aria-pressed="false">SMG</button>
+
+                    <button class="filter-btn"
+                            data-category="Sniper"
+                            type="button"
+                            aria-pressed="false">Sniper</button>
+                </div>
+
+                <div id="weapon-list"
+                     class="weapon-list"
+                     aria-label="Available weapons"
+                     aria-live="polite">
+                </div>
+
+                <p class="sidebar-tip">
+                    <span aria-hidden="true">✦</span>
+                    Select a weapon to inspect its stats and customize its build.
+                </p>
+            </aside>
+
+            <section class="weapon-workspace"
+                     aria-label="Selected weapon details">
+
+                <div class="weapon-banner">
+                    <div class="weapon-banner-content">
+                        <p class="eyebrow" id="weapon-category">ASSAULT RIFLE</p>
+                        <h2 id="weapon-name">Kilo 141</h2>
+
+                        <p id="weapon-description">
+                            A versatile weapon for balanced combat.
+                        </p>
+
+                        <div class="weapon-tags">
+                            <span id="weapon-role">VERSATILE</span>
+                            <span id="weapon-mode">MULTIPLAYER BUILD</span>
+                        </div>
+                    </div>
+
+                    <div class="weapon-emblem"
+                         id="weapon-emblem"
+                         aria-hidden="true">K</div>
+                </div>
+
+                <section class="stats-panel"
+                         aria-labelledby="stats-title">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">PERFORMANCE ANALYSIS</p>
+                            <h2 id="stats-title">Weapon statistics</h2>
+                        </div>
+
+                        <span class="live-label">● LIVE BUILD</span>
+                    </div>
+
+                    <div class="stats-grid">
+
+                        <div class="stat">
+                            <div class="stat-label">
+                                <span>Damage</span>
+                                <strong id="stat-damage">72</strong>
+                            </div>
+                            <div class="stat-track">
+                                <span id="bar-damage"></span>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-label">
+                                <span>Accuracy</span>
+                                <strong id="stat-accuracy">78</strong>
+                            </div>
+                            <div class="stat-track">
+                                <span id="bar-accuracy"></span>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-label">
+                                <span>Range</span>
+                                <strong id="stat-range">75</strong>
+                            </div>
+                            <div class="stat-track">
+                                <span id="bar-range"></span>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-label">
+                                <span>Mobility</span>
+                                <strong id="stat-mobility">68</strong>
+                            </div>
+                            <div class="stat-track">
+                                <span id="bar-mobility"></span>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-label">
+                                <span>Control</span>
+                                <strong id="stat-control">76</strong>
+                            </div>
+                            <div class="stat-track">
+                                <span id="bar-control"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="stats-note">
+                        Demo ratings out of 100 — not official in-game measurements.
+                    </p>
+                </section>
+
+                <section class="gunsmith-panel"
+                         aria-labelledby="gunsmith-title">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">CUSTOMIZATION BAY</p>
+                            <h2 id="gunsmith-title">Gunsmith attachments</h2>
+                        </div>
+
+                        <span class="slot-counter" id="slot-counter">
+                            5 SLOTS
+                        </span>
+                    </div>
+
+                    <p class="muted">
+                        Select an attachment for each slot to customize your build.
+                    </p>
+
+                    <div id="attachment-list"
+                         class="attachment-list"
+                         aria-live="polite">
+                    </div>
+
+                    <div class="build-footer">
+                        <div>
+                            <p class="eyebrow">CURRENT CONFIGURATION</p>
+                            <strong id="build-name">Balanced Operator</strong>
+                        </div>
+
+                        <button id="reset-build"
+                                class="reset-btn"
+                                type="button">
+                            Reset build
+                        </button>
+                    </div>
+                </section>
+
+                <section class="recommendation-panel"
+                         aria-labelledby="recommendation-title">
+
+                    <span class="recommendation-icon" aria-hidden="true">✦</span>
+
+                    <div>
+                        <p class="eyebrow">GHOST RECOMMENDATION</p>
+
+                        <h3 id="recommendation-title">Balanced combat</h3>
+
+                        <p id="recommendation-text">
+                            A balanced setup for versatile engagements.
+                        </p>
+                    </div>
+                </section>
+
+                <p class="page-note">
+                    GHOSTCODM ARMORY // Choose your setup. Adapt to the mission.
+                </p>
+
+            </section>
+        </section>
+
+        <footer class="footer">
+            <p>GHOSTCODM <span>ARMORY SYSTEM</span></p>
+            <p>TRAIN SMART. PLAY AS A SQUAD.</p>
+        </footer>
+
+    </main>
+</body>
+</html>
