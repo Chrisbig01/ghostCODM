@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Roles | GhostCODM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #080810;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #a855f7;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            color: #c5c5d5;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #11111f;
+            border: 1px solid #29293d;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #a855f7;
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #a855f7;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #c5c5d5;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 13px 25px;
+            background: #a855f7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #7e22ce;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>Squad Roles</h1>
+
+        <p class="intro">
+            Every player has a role. Find yours and help your team dominate.
+        </p>
+
+        <section class="roles">
+
+            <article class="card">
+                <h2>Assault</h2>
+                <p>
+                    Lead the attack, push objectives and engage enemies
+                    at the front line.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>Support</h2>
+                <p>
+                    Help teammates, provide cover and keep the squad
+                    ready for the next fight.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>Sniper</h2>
+                <p>
+                    Control long distances, identify enemy positions
+                    and eliminate distant targets.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>Scout</h2>
+                <p>
+                    Gather information, observe enemy movements
+                    and help your squad plan its next move.
+                </p>
+            </article>
+
+        </section>
+
+        <a href="{{ url_for('home') }}" class="button">
+            Back to Home
+        </a>
+
+    </main>
+</body>
+</html>
