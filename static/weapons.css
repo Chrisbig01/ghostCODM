@@ -1,0 +1,962 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #08080d;
+    --bg-soft: #0c0b12;
+    --panel: #111019;
+    --panel-hover: #171321;
+    --purple: #9b5cff;
+    --purple-bright: #b879ff;
+    --purple-light: #d4b0ff;
+    --text: #f7f4fc;
+    --muted: #aaa4b8;
+    --muted-dark: #777083;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-purple: rgba(155, 92, 255, 0.35);
+    --glow: 0 0 25px rgba(155, 92, 255, 0.14);
+    --radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% -15%, rgba(111, 53, 181, 0.13), transparent 48%),
+        var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--purple-bright);
+    outline-offset: 4px;
+}
+
+::selection {
+    color: white;
+    background: #7440bb;
+}
+
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 76px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8, 8, 13, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.brand {
+    flex-shrink: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.brand span {
+    color: var(--purple-bright);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.status i {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #a879ff;
+    box-shadow: 0 0 12px rgba(168, 121, 255, 0.75);
+}
+
+.home-button {
+    min-height: 42px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    background: rgba(155, 92, 255, 0.09);
+    color: var(--purple-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    transition: background 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+}
+
+.home-button span {
+    font-size: 17px;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    background: var(--purple);
+    color: #fff;
+    box-shadow: 0 0 24px rgba(155, 92, 255, 0.25);
+}
+
+
+.container {
+    width: min(1440px, calc(100% - 64px));
+    margin: 0 auto;
+}
+
+.page-heading {
+    position: relative;
+    padding: 70px 0 40px;
+}
+
+.eyebrow {
+    color: var(--purple-light);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-heading h1 {
+    margin-top: 13px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(44px, 6vw, 76px);
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: 1px;
+}
+
+.page-heading h1 span {
+    color: var(--purple-bright);
+}
+
+.intro {
+    max-width: 520px;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+.mode-panel {
+    margin-bottom: 25px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(110deg, rgba(155, 92, 255, 0.07), transparent 70%), var(--panel);
+}
+
+.mode-panel h2,
+.section-heading h2 {
+    margin-top: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.muted {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.mode-switch {
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #09080e;
+}
+
+.mode-btn {
+    padding: 12px 18px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.mode-btn:hover {
+    color: white;
+}
+
+.mode-btn.selected {
+    border-color: var(--border-purple);
+    background: rgba(155, 92, 255, 0.17);
+    color: var(--purple-light);
+}
+
+
+.armory-layout {
+    display: grid;
+    grid-template-columns: 285px minmax(0, 1fr);
+    align-items: start;
+    gap: 24px;
+}
+
+.weapon-sidebar,
+.stats-panel,
+.gunsmith-panel,
+.recommendation-panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--panel);
+}
+
+.weapon-sidebar {
+    position: sticky;
+    top: 98px;
+    padding: 22px;
+}
+
+.sidebar-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sidebar-heading h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+#weapon-count {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+
+.search-box {
+    margin-top: 22px;
+    padding: 0 12px;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #0a0910;
+    transition: border-color 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: var(--purple);
+}
+
+.search-box > span {
+    color: var(--purple-light);
+    font-size: 21px;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 11px;
+}
+
+.search-box input::placeholder {
+    color: var(--muted-dark);
+}
+
+.search-box input:focus-visible {
+    outline: none;
+}
+
+
+.category-filters {
+    margin-top: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.filter-btn {
+    min-height: 31px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--border-purple);
+    color: white;
+}
+
+.filter-btn.selected {
+    border-color: var(--purple);
+    background: rgba(155, 92, 255, 0.14);
+    color: var(--purple-light);
+}
+
+
+.weapon-list {
+    margin-top: 20px;
+    display: grid;
+    gap: 9px;
+}
+
+.weapon-item,
+.weapon-option,
+.weapon-entry,
+.weapon-list button {
+    max-width: 100%;
+}
+
+.weapon-list button {
+    width: 100%;
+    min-height: 64px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #0d0c13;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.weapon-list button:hover {
+    transform: translateX(2px);
+    border-color: var(--border-purple);
+    background: var(--panel-hover);
+}
+
+.weapon-list button.selected,
+.weapon-list button.active {
+    border-color: var(--purple);
+    background: linear-gradient(100deg, rgba(155, 92, 255, 0.16), rgba(155, 92, 255, 0.03));
+    box-shadow: inset 3px 0 0 var(--purple);
+}
+
+.weapon-list button span {
+    overflow-wrap: anywhere;
+}
+
+.sidebar-tip {
+    margin-top: 20px;
+    padding: 13px;
+    border: 1px solid rgba(155, 92, 255, 0.16);
+    border-radius: 5px;
+    background: rgba(155, 92, 255, 0.045);
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.sidebar-tip span {
+    margin-right: 5px;
+    color: var(--purple-light);
+}
+
+
+.weapon-workspace {
+    min-width: 0;
+    display: grid;
+    gap: 20px;
+}
+
+.weapon-banner {
+    position: relative;
+    min-height: 235px;
+    padding: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-purple);
+    border-radius: var(--radius);
+    background:
+        radial-gradient(ellipse at 90% 20%, rgba(155, 92, 255, 0.22), transparent 42%),
+        linear-gradient(120deg, #14101e, #0d0c13 75%);
+}
+
+.weapon-banner::after {
+    content: "";
+    position: absolute;
+    right: 12%;
+    bottom: -100px;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(184, 121, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 30px rgba(184, 121, 255, 0.025),
+                0 0 0 60px rgba(184, 121, 255, 0.02);
+    pointer-events: none;
+}
+
+.weapon-banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 75%;
+}
+
+.weapon-banner h2 {
+    margin-top: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 900;
+    line-height: 1;
+}
+
+#weapon-description {
+    max-width: 440px;
+    margin-top: 13px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.weapon-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.weapon-tags span {
+    padding: 7px 10px;
+    border: 1px solid var(--border-purple);
+    border-radius: 3px;
+    background: rgba(155, 92, 255, 0.08);
+    color: var(--purple-light);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.weapon-emblem {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(184, 121, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(155, 92, 255, 0.08);
+    box-shadow: 0 0 40px rgba(155, 92, 255, 0.09);
+    color: var(--purple-light);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+}
+
+
+.stats-panel,
+.gunsmith-panel {
+    padding: 27px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.section-heading h2 {
+    font-size: 26px;
+}
+
+.live-label {
+    flex-shrink: 0;
+    color: var(--purple-light);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+
+.stats-grid {
+    margin-top: 27px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 32px;
+}
+
+.stat {
+    min-width: 0;
+}
+
+.stat-label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.stat-label strong {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-track {
+    height: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #292332;
+}
+
+.stat-track span {
+    width: 0;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #7840d5, #c18bff);
+    box-shadow: 0 0 12px rgba(155, 92, 255, 0.25);
+    transition: width 0.45s ease;
+}
+
+.stats-note {
+    margin-top: 25px;
+    color: var(--muted-dark);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+.gunsmith-panel > .muted {
+    margin-top: 12px;
+}
+
+.slot-counter {
+    flex-shrink: 0;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.attachment-list {
+    margin-top: 23px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* Common styling for attachment controls generated by JS */
+.attachment-list label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.attachment-list select {
+    width: 100%;
+    min-height: 43px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #0a0910;
+    color: var(--text);
+    font-size: 11px;
+}
+
+.attachment-list select:focus {
+    border-color: var(--purple);
+    outline: none;
+}
+
+.attachment-list option {
+    background: #111019;
+    color: var(--text);
+}
+
+.attachment-list button {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #0c0b12;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.attachment-list button:hover {
+    border-color: var(--border-purple);
+}
+
+.build-footer {
+    margin-top: 25px;
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.build-footer strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.reset-btn {
+    min-height: 39px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.reset-btn:hover {
+    border-color: var(--purple);
+    background: rgba(155, 92, 255, 0.08);
+    color: var(--purple-light);
+}
+
+
+.recommendation-panel {
+    padding: 23px;
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    border-color: rgba(155, 92, 255, 0.24);
+    background: linear-gradient(110deg, rgba(155, 92, 255, 0.10), transparent 75%), var(--panel);
+}
+
+.recommendation-icon {
+    flex-shrink: 0;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-purple);
+    border-radius: 8px;
+    background: rgba(155, 92, 255, 0.11);
+    color: var(--purple-light);
+    font-size: 21px;
+}
+
+.recommendation-panel h3 {
+    margin-top: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 23px;
+}
+
+.recommendation-panel p:last-child {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+.page-note {
+    color: var(--muted-dark);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-align: right;
+}
+
+.footer {
+    margin-top: 65px;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    color: var(--muted-dark);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.footer span {
+    margin-left: 8px;
+    color: var(--purple-light);
+}
+
+
+@media (min-width: 1500px) {
+    .container {
+        width: min(1440px, calc(100% - 100px));
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        width: calc(100% - 40px);
+    }
+
+    .armory-layout {
+        grid-template-columns: 245px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .weapon-sidebar {
+        padding: 16px;
+    }
+
+    .stats-panel,
+    .gunsmith-panel {
+        padding: 21px;
+    }
+
+    .weapon-banner {
+        padding: 25px;
+    }
+
+    .weapon-emblem {
+        width: 75px;
+        height: 75px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 760px) {
+    .topbar {
+        min-height: 70px;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+    }
+
+    .brand {
+        font-size: 26px;
+    }
+
+    .header-actions {
+        gap: 12px;
+    }
+
+    .status {
+        font-size: 8px;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .page-heading {
+        padding: 52px 0 30px;
+    }
+
+    .mode-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 21px;
+    }
+
+    .mode-switch {
+        width: 100%;
+    }
+
+    .mode-btn {
+        flex: 1;
+        padding: 12px 8px;
+    }
+
+    .armory-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .weapon-sidebar {
+        position: static;
+    }
+
+    .weapon-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .weapon-banner {
+        min-height: 205px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        gap: 12px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .home-button {
+        min-height: 38px;
+        padding: 0 14px;
+    }
+
+    .status {
+        letter-spacing: 1px;
+    }
+
+    .page-heading h1 {
+        font-size: 45px;
+    }
+
+    .weapon-list {
+        grid-template-columns: 1fr;
+    }
+
+    .weapon-banner {
+        padding: 23px 19px;
+    }
+
+    .weapon-banner-content {
+        max-width: 100%;
+    }
+
+    .weapon-banner h2 {
+        font-size: 42px;
+    }
+
+    .weapon-emblem {
+        width: 49px;
+        height: 49px;
+        font-size: 26px;
+    }
+
+    .weapon-banner::after {
+        right: -100px;
+    }
+
+    .stats-panel,
+    .gunsmith-panel {
+        padding: 18px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .stats-grid,
+    .attachment-list {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-panel {
+        padding: 18px;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
